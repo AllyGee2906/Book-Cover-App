@@ -26,6 +26,9 @@ jobs:
       - name: Extract project
         run: unzip -q CoverMuse.zip
 
+      - name: Package 120 offline fonts
+        run: python3 CoverMuse/scripts/fetch_fonts.py CoverMuse/android/app/src/main/assets
+
       - name: Build debug APK
         working-directory: CoverMuse/android
         run: gradle assembleDebug --stacktrace
